@@ -232,7 +232,7 @@ class UMatrix : public Matrix {
 		}
 };
 
-#define LN 1000000
+#define LN 100000
 
 int main(int argc, char* argv[]) {
 
@@ -260,6 +260,7 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
+		printf("\n");
 		PMatrix P(n);
 
 		A.PLUDecomposite(&P);
@@ -305,7 +306,7 @@ int main(int argc, char* argv[]) {
 			printf("%.8lf", res[i]);
 		}
 	}
-	printf("\n");
+
 	//system("PAUSE");
 	return 0;
 }
