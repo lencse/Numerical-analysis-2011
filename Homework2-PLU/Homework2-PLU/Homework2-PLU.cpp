@@ -144,16 +144,16 @@ class SquareMatrix : public Matrix {
 				setM(i2, i, tmp);
 			}
 		}
-		// Return value: Matrix is regular or not
 		void PLUDecomposite(PMatrix *P) {
 			for (int k = 1; k <= n()-1; ++k) {
 				int m = k;
 				for (int i = k+1; i <= n(); ++i) {
-					if (abs(M(i, k)) > M(m, k)) {
+					if (fabs(M(i, k)) > fabs(M(m, k))) {
 						m = i;
 					}
 				}
-				if (abs(M(m, k)) < 1e-15) {
+				if (fabs(M(m, k) + 0.0) < 1e-15) {
+					printf("%d, %d : %.310lf\n", m, k, M(m, k));
 					_reg = false;
 					return;
 				}
@@ -168,7 +168,7 @@ class SquareMatrix : public Matrix {
 					}
 				}
 			}
-			_reg = abs(M(n(), n())) >= 1e-15;
+			_reg = fabs(M(n(), n())) >= 1e-15;
 		}
 		bool regular() {
 			return _reg;
@@ -232,7 +232,7 @@ class UMatrix : public Matrix {
 		}
 };
 
-#define LN 10000
+#define LN 1000000
 
 int main(int argc, char* argv[]) {
 
@@ -293,7 +293,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	for (int i = 0; i < lines; ++i) {
-		if (newline[i] && i > 1) {
+		if (newline[i] && i > 0) {
 			printf("\n");
 		}
 		if (sing[i]) {
@@ -305,7 +305,7 @@ int main(int argc, char* argv[]) {
 			printf("%.8lf", res[i]);
 		}
 	}
-
+	printf("\n");
 	//system("PAUSE");
 	return 0;
 }
