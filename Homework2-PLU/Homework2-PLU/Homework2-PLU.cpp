@@ -153,7 +153,6 @@ class SquareMatrix : public Matrix {
 					}
 				}
 				if (fabs(M(m, k) + 0.0) < 1e-15) {
-					printf("%d, %d : %.310lf\n", m, k, M(m, k));
 					_reg = false;
 					return;
 				}
