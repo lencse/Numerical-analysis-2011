@@ -260,7 +260,6 @@ int main(int argc, char* argv[]) {
 			}
 		}
 
-		printf("\n");
 		PMatrix P(n);
 
 		A.PLUDecomposite(&P);
@@ -307,6 +306,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
+	printf("\n");
 	//system("PAUSE");
 	return 0;
 }
