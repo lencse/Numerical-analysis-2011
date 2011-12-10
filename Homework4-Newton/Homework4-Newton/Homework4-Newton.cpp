@@ -301,7 +301,7 @@ class Equation {
 					y -> setV(2, - x->V(1) + 2 * x->V(2) * x->V(2) - 1);
 					break;
 				case 3:
-					y -> setV(1, -1.0* 4.0 * x->V(1) * cos(2.0 * x->V(1) - x->V(2)) - 3.0);
+					y -> setV(1, -4.0 * x->V(1) + cos(2.0 * x->V(1) - x->V(2)) - 3.0);
 					y -> setV(2, sin(x->V(1)) - 3.0 * x->V(2) - 2.0);
 					break;
 			}
