@@ -123,9 +123,9 @@ class Vector : public Array {
 			return sqrt(a);
 		}
 		double normInf() {
-			double ret = abs(V(1));
+			double ret = fabs(V(1));
 			for (int i = 2; i <= n(); ++i) {
-				if (ret < abs(V(i))) ret = abs(V(i));
+				if (ret < fabs(V(i))) ret = fabs(V(i));
 			}
 			return ret;
 		}
